@@ -20,6 +20,30 @@ buttons.forEach(function (button) {
         if (numbers.includes(+buttonSelected) || buttonSelected === ".") {
             numberArray.push(buttonSelected);
             display.value = numberArray.join("");
+        } else if (buttonSelected === "AC") {
+            a = "";
+            b = "";
+            operator = ""
+            numberArray = [];
+            display.value = "";
+        } else if (buttonSelected === "+/-") {
+            if (numberArray.length > 0) {
+                numberArray.unshift("-");
+                display.value = numberArray.join("");
+            } else {
+                a = +a * -1;
+                display.value = a;
+            }
+        } else if (buttonSelected === "%") {
+            if (numberArray.length > 0) {
+                value = numberArray.join("") / 100;
+                value = value.toString();
+                numberArray = value.split("");
+                display.value = numberArray.join("");
+            } else {
+                a = +a / 100;
+                display.value = a;
+            }
         } else if (a === "") {
             a = +numberArray.join("");
             numberArray = [];
@@ -34,12 +58,7 @@ buttons.forEach(function (button) {
             b = "";
         }
     });
-
-
 });
-
-
-
 
 
 
