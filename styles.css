@@ -76,3 +76,7 @@ input[type="text"] {
 .ac {
     background-color: yellow;
 }
+
+.clicked {
+    background-color: yellow;
+}
