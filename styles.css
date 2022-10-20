@@ -1,16 +1,23 @@
-.body {
-    display: flex;
-
-
-
+html,
+body {
+    height: 100%;
 }
 
 .outer-container {
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+
+}
+
+.inner-container {
+    background-color: #ffd1dc;
+    border-radius: 5px;
+    border: 2px solid rgb(42, 42, 42);
+    padding: 20px 5px;
 }
 
 
@@ -19,8 +26,53 @@
 
 }
 
-.button {
-    width: 50px;
+#display {
+    width: 250px;
     height: 40px;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.button {
+    width: 67px;
+    height: 50px;
     margin: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: large;
+    font-weight: 700;
+
+}
+
+.large-button {
+    width: 138px;
+    background-color: aqua;
+
+}
+
+input[type="text"] {
+    font-size: 24px;
+}
+
+.number {
+    background-color: #a855f7;
+}
+
+.operator {
+    background-color: #4f46e5;
+}
+
+.dot {
+    background-color: #a855f7;
+}
+
+
+
+.other {
+    background-color: lightsalmon;
+}
+
+.ac {
+    background-color: yellow;
 }

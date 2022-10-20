@@ -2,7 +2,7 @@ const display = document.querySelector("#display");
 display.value = "";
 
 let numberArray = [];
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "."];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const operatorSymbols = ["+", "-", "*", "/"];
 let operator = "";
 let a = "";
@@ -29,7 +29,9 @@ buttons.forEach(function (button) {
 
         let buttonSelected = button.textContent;
 
-        if (numbers.includes(+buttonSelected)) {
+
+
+        if (numbers.includes(+buttonSelected) || buttonSelected === ".") {
             numberArray.push(buttonSelected);
             display.value = numberArray.join("");
         };
@@ -63,6 +65,31 @@ buttons.forEach(function (button) {
                     if (operatorSymbols.includes(buttonSelected)) { operator = buttonSelected };
                 }
 
+            }
+        } else if (buttonSelected === "AC") {
+            a = "";
+            b = "";
+            operator = ""
+            numberArray = [];
+            display.value = "";
+            answer = "";
+        } else if (buttonSelected === "+/-") {
+            if (numberArray.length > 0) {
+                numberArray.unshift("-");
+                display.value = numberArray.join("");
+            } else {
+                a = +a * -1;
+                display.value = a;
+            }
+        } else if (buttonSelected === "%") {
+            if (numberArray.length > 0) {
+                value = numberArray.join("") / 100;
+                value = value.toString();
+                numberArray = value.split("");
+                display.value = numberArray.join("");
+            } else {
+                a = +a / 100;
+                display.value = a;
             }
         }
     });
